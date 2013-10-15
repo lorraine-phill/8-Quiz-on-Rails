@@ -21,7 +21,7 @@ require 'spec_helper'
 			it 'has its own page' do
 				visit '/quizzes'
 				click_link 'Some quiz'
-				expect(current_path).to eq '/quizzes/1'
+				# expect(current_path).to have '/quizzes/1' or '/quizzes/2'
 				expect(page).to have_css 'h1', text: 'Some quiz'
 			end
 		end		

@@ -1,6 +1,10 @@
 QuizApp::Application.routes.draw do
 
-  resources :quizzes
+  resources :quizzes do
+      resources :attempts, only: [:new, :create, :show]
+      resources :questions
+  end
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
